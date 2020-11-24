@@ -13,3 +13,6 @@ RDEPENDS_${PV} = "ncurses"
 
 # fix build issue to make make find the ncurses lib
 EXTRA_OEMAKE = "-e"
+
+# patch nInvaders.c to use joystick support
+SRC_URI += "file://joystick-support.patch"
