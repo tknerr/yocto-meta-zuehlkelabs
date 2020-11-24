@@ -9,6 +9,13 @@ SRC_URI[sha256sum] = "bfbc5c378704d9cf5e7fed288dac88859149bee5ed0850175759d310b6
 # license file and checksum within the extracted source tarball
 LIC_FILES_CHKSUM = "file://gpl.txt;md5=393a5ca445f6965873eca0259a17f833"
 
+# ncurses is a build-time dependency
+DEPENDS = "ncurses"
+
+# fix build issue to make make find the ncurses lib
+EXTRA_OEMAKE = "-e"
+
+
 python do_display_banner() {
     bb.plain("***********************************************");
     bb.plain("*                                             *");
